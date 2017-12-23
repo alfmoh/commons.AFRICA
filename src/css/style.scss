@@ -1,0 +1,117 @@
+/**
+ * commons.AFRICA style.css
+ * ------------------------
+ *
+ * Author: Code for Africa
+ * URI: https://codeforafrica.org
+ *
+ */
+
+$fa-font-path: "/fonts";
+@import '~font-awesome/scss/font-awesome';
+
+@import "~bootstrap/scss/bootstrap";
+
+html, body {
+  font-family: 'Lora', serif;
+}
+
+p {
+  font-family: 'Lora', serif;
+}
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+.font-lora, .font-body {
+  font-family: 'Lora', serif;
+}
+.font-nunito, .font-headings {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+// Text background - http://geoffmuskett.com/text-with-background-padding-on-the-end-of-each-line-and-a-gap-between-lines/
+p, h1, h2, h3, h4, h5, h6 {
+  &[class*="bg-"] {
+    background-color: transparent !important;
+    padding: 0 0.3em;
+  }
+  @each $name, $color in $theme-colors {
+    &.bg-#{$name} span {
+      line-height: 1.5em;
+      background-color: $color;
+      box-shadow: 0.3em 0 0 $color, -0.3em 0 0 $color;
+    }
+  }
+}
+
+// Solve anchor things - https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -56px; 
+  height: 56px; 
+  visibility: hidden; 
+}
+
+
+// Item (Project or Organisation) Layout
+.item {
+  .media {
+    img {
+      max-width: 100px;
+    }
+  }
+}
+
+
+// Users wall of avatars
+.users-wall {
+  overflow-x: scroll;
+  white-space: nowrap;
+  min-height: 400px;
+  background-color: #000;
+  .avatar {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+  }
+}
+
+
+
+#mc_embed_signup label {
+  font-weight: 600 !important;
+}
+
+
+
+
+.partner-logos {
+  img {
+    max-height: 70px;
+    max-width: 250px;
+    transition-duration: 0.2s;
+  }
+  a:hover img {
+    opacity: 0.7;
+  }
+}
+
+.home {
+  .jumbotron {
+    .list-group {
+      a {
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+        border-color: rgba(255,255,255,0.3);
+        &:hover {
+          background-color: rgba(255,255,255,0.2);
+        }
+      }
+    }
+  }
+}
+
+
